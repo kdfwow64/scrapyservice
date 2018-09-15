@@ -24,7 +24,7 @@ Route::get('breweries', ['middleware' => 'cors', function()
 }]);
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('welcome');
 });
 Route::get('/welcome', function () {
     return view('welcome');
