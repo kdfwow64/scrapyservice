@@ -62,7 +62,8 @@
                         <a class="nav-link" href="#">Blog</a>
                     </li>
 
-                    @if(Auth::user()->name == 'Admin')
+
+                    @if(!Auth::guest() && Auth::user()->name == 'Admin')
                     <li class="nav-item">
                         <a id="mail_navbar" class="nav-link" href="{{ url('mail/template') }}" role="button"   aria-expanded="false" v-pre>
                             Mail Template
@@ -86,7 +87,7 @@
                     @endif
                     @if (Auth::guest())
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{ route('login') }}</a>
+                        <a class="nav-link" href="{{ route('login') }}">Login</a>
                     </li>
                     @else
                     <li>
